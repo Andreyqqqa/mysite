@@ -4,8 +4,7 @@
     <meta charset="UTF-8">
     <title>Андрей & Карина ❤️</title>
     <link rel="stylesheet" href="/static/style.css">
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Raleway:wght@300;400;600&family=Great+Vibes&display=swap" rel="stylesheet">
-</head>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Raleway:wght@300;400;600&family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet"></head>
 <body>
 
     <div id="loader">
@@ -25,6 +24,7 @@
     </div>
 
     <div id="particles"></div>
+    <canvas id="bg-stars"></canvas>
 
     <nav>
         <div class="logo">А & К ❤️</div>
@@ -52,7 +52,7 @@
         <div class="hero-content">
             <p class="pre-title">с 3 августа 2025 года 🌹</p>
             <h1>Андрей <span>&</span> Карина</h1>
-            <p class="subtitle">С того дня как ты появилась в моей жизни — всё изменилось ✨</p>
+            <p class="subtitle" id="typewriter"></p>
             <div class="counter-box">
                 <div class="counter-item"><span id="days">0</span><small>дней</small></div>
                 <div class="counter-item"><span id="hours">0</span><small>часов</small></div>
@@ -375,6 +375,48 @@
             entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
         }, { threshold: 0.1 });
         document.querySelectorAll('.timeline-item, .masonry-item, .letter, .love-card, .stat-card, .plan-card').forEach(el => observer.observe(el));
+        // Звёздное небо на весь сайт
+const bgCanvas = document.getElementById('bg-stars');
+const bgCtx = bgCanvas.getContext('2d');
+bgCanvas.width = window.innerWidth;
+bgCanvas.height = window.innerHeight;
+const bgStars = Array.from({length: 200}, () => ({
+    x: Math.random() * bgCanvas.width,
+    y: Math.random() * bgCanvas.height,
+    r: Math.random() * 1.5 + 0.3,
+    alpha: Math.random() * 0.7 + 0.1,
+    speed: Math.random() * 0.01 + 0.003
+}));
+function drawBgStars() {
+    bgCtx.clearRect(0, 0, bgCanvas.width, bgCanvas.height);
+    bgStars.forEach(s => {
+        s.alpha += s.speed;
+        if (s.alpha > 0.9 || s.alpha < 0.1) s.speed *= -1;
+        bgCtx.beginPath();
+        bgCtx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+        bgCtx.fillStyle = `rgba(255, 220, 230, ${s.alpha})`;
+        bgCtx.fill();
+    });
+    requestAnimationFrame(drawBgStars);
+}
+drawBgStars();
+window.addEventListener('resize', () => {
+    bgCanvas.width = window.innerWidth;
+    bgCanvas.height = window.innerHeight;
+});
+
+// Печатная машинка
+const typeText = 'С того дня как ты появилась в моей жизни — всё изменилось ✨';
+let typeIndex = 0;
+const typeEl = document.getElementById('typewriter');
+function typeWriter() {
+    if (typeIndex < typeText.length) {
+        typeEl.textContent += typeText.charAt(typeIndex);
+        typeIndex++;
+        setTimeout(typeWriter, 60);
+    }
+}
+setTimeout(typeWriter, 5500);
     </script>
 </body>
 </html>

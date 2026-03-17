@@ -7,7 +7,13 @@ body {
     overflow-x: hidden;
 }
 
-#particles {
+#particles {#bg-stars {
+    position: fixed;
+    top: 0; left: 0;
+    width: 100%; height: 100%;
+    z-index: 0;
+    pointer-events: none;
+}
     position: fixed;
     top: 0; left: 0;
     width: 100%; height: 100%;
@@ -167,13 +173,15 @@ footer { position: relative; z-index: 10; text-align: center; padding: 30px; col
 #stars-canvas { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }
 .loader-content { position: relative; z-index: 10; display: flex; flex-direction: column; align-items: center; gap: 20px; }
 .writing-svg { width: 500px; max-width: 90vw; overflow: visible; filter: drop-shadow(0 0 15px rgba(255, 107, 138, 0.6)); }
-#writing-text { animation: writeText 3s ease forwards 0.5s; }
+#writing-text {
+    animation: writeText 3s ease forwards 0.5s;
+    font-family: 'Cormorant Garamond', serif !important;
+}
 @keyframes writeText { from { stroke-dashoffset: 1000; fill: transparent; } 80% { stroke-dashoffset: 0; fill: transparent; } 100% { stroke-dashoffset: 0; fill: #ff6b8a; } }
 .loader-heart { font-size: 40px; opacity: 0; animation: heartAppear 0.5s ease forwards 3s, heartBeat 1s ease infinite 3.5s; }
 @keyframes heartAppear { from { opacity: 0; transform: scale(0); } to { opacity: 1; transform: scale(1); } }
 @keyframes heartBeat { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
-.loader-date { font-family: 'Great Vibes', cursive; font-size: 28px; color: #aaa; opacity: 0; animation: fadeInUp 0.8s ease forwards 3.2s; }
-
+.loader-date { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-style: italic; font-weight: 300; color: #aaa; opacity: 0; animation: fadeInUp 0.8s ease forwards 3.2s; letter-spacing: 3px; }
 /* Мобилка */
 @media (max-width: 768px) {
     nav { padding: 15px 20px; }
