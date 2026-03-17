@@ -308,4 +308,24 @@ nav ul a.active::after {
     height: 1px;
     background: #ff6b8a;
     box-shadow: 0 0 8px rgba(255, 107, 138, 0.8);
+}.timeline-item-future {
+    border-style: dashed;
+    border-color: #5d0040;
+    opacity: 0;
+    background: rgba(255, 107, 138, 0.02);
+}
+.timeline-item-future.visible {
+    opacity: 1;
+    transform: translateX(0);
+}
+.timeline-item-future .timeline-dot {
+    font-size: 32px;
+    color: #ff6b8a;
+}
+.timeline-item-future h3 {
+    font-style: italic;
+}
+.timeline-item-future p {
+    font-style: italic;
+    color: #666 !important;
 }
