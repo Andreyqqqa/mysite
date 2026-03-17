@@ -1,11 +1,12 @@
 <!DOCTYPE html>
 <html lang="ru">
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
     <title>Андрей & Карина ❤️</title>
     <link rel="stylesheet" href="/static/style.css">
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Raleway:wght@300;400;600&family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet"></head>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Raleway:wght@300;400;600&family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+</head>
 <body>
 
     <div id="loader">
@@ -13,7 +14,7 @@
         <div class="loader-content">
             <svg class="writing-svg" viewBox="0 0 500 120" xmlns="http://www.w3.org/2000/svg">
                 <text x="50%" y="80" text-anchor="middle"
-                    font-family="'Great Vibes', cursive"
+                    font-family="'Cormorant Garamond', serif"
                     font-size="72" fill="none"
                     stroke="#ff6b8a" stroke-width="1.5"
                     stroke-dasharray="1000" stroke-dashoffset="1000"
@@ -28,7 +29,7 @@
     <canvas id="bg-stars"></canvas>
 
     <nav>
-        <div class="logo">А & К ❤️</div>
+        <div class="logo">А ♥ К</div>
         <div class="burger" onclick="toggleMenu()">☰</div>
         <ul id="nav-menu">
             <li><a href="#home" onclick="toggleMenu()">Главная</a></li>
@@ -125,22 +126,22 @@
         </div>
     </div>
 
-<div class="music-bar">
-    <div class="music-bar-inner">
-        <span class="music-label">🎵 Наша песня — Cupsize — Минус Плюс</span>
-        <div class="custom-player">
-            <button class="play-btn" id="playBtn" onclick="togglePlay()">▶</button>
-            <div class="player-info">
-                <div class="player-title">Cupsize — Минус Плюс</div>
-                <div class="player-progress" onclick="seekAudio(event)" id="progressBar">
-                    <div class="player-progress-fill" id="progressFill"></div>
+    <div class="music-bar">
+        <div class="music-bar-inner">
+            <span class="music-label">🎵 Наша песня — Cupsize — Минус Плюс</span>
+            <div class="custom-player">
+                <button class="play-btn" id="playBtn" onclick="togglePlay()">▶</button>
+                <div class="player-info">
+                    <div class="player-title">Cupsize — Минус Плюс</div>
+                    <div class="player-progress" onclick="seekAudio(event)" id="progressBar">
+                        <div class="player-progress-fill" id="progressFill"></div>
+                    </div>
                 </div>
+                <div class="player-time" id="playerTime">0:00</div>
+                <audio id="mainAudio" src="/static/song.mp3"></audio>
             </div>
-            <div class="player-time" id="playerTime">0:00</div>
-            <audio id="mainAudio" src="/static/song.mp3"></audio>
         </div>
     </div>
-</div>
 
     <section class="section fullscreen" id="letter">
         <div class="letter-wrap">
@@ -148,21 +149,22 @@
                 <div class="letter-envelope-body">
                     <div class="letter-envelope-flap" id="real-flap"></div>
                     <div class="letter-envelope-front">
-                        <div class="letter-envelope-to">Для Карины ❤️</div>
+                        <div class="letter-envelope-to">Для Карины ♥</div>
                         <div class="letter-envelope-hint">Нажми чтобы открыть</div>
                     </div>
                 </div>
             </div>
             <div class="real-letter" id="real-letter">
                 <div class="real-letter-inner">
+                    <div class="real-letter-photo" style="background-image: url('/static/images/photo5.jpg')"></div>
                     <div class="real-letter-date">3 августа 2025 г.</div>
-                    <div class="real-letter-greeting">Моя прекрасная девочка,</div>
+                    <div class="real-letter-greeting typewrite" data-text="Моя прекрасная девочка,"></div>
                     <div class="real-letter-body">
-                        <p>я тебя очень люблю и я очень дорожу нашими отношениями. Я верю в то, что у нас всё будет хорошо и мы проведём наши жизни вместе!</p>
-                        <p>Мы обязательно воплотим наши планы в реальность и сделаем то, что хотели — и у нас обязательно всё получится!</p>
-                        <p>Очень сильно тебя люблю!</p>
+                        <p class="typewrite-p" data-text="я тебя очень люблю и я очень дорожу нашими отношениями. Я верю в то, что у нас всё будет хорошо и мы проведём наши жизни вместе!"></p>
+                        <p class="typewrite-p" data-text="Мы обязательно воплотим наши планы в реальность и сделаем то, что хотели — и у нас обязательно всё получится!"></p>
+                        <p class="typewrite-p" data-text="Очень сильно тебя люблю!"></p>
                     </div>
-                    <div class="real-letter-sign">С любовью,<br>твой Андрей ❤️</div>
+                    <div class="real-letter-sign typewrite-sign" data-text="С любовью, твой Андрей ❤️"></div>
                     <button class="letter-close-btn" onclick="closeLetter()">Закрыть письмо ✕</button>
                 </div>
             </div>
@@ -205,7 +207,7 @@
                 <div class="love-card"><div class="love-icon">🌹</div><p>За наши прекрасные чувства</p></div>
                 <div class="love-card"><div class="love-icon">💆</div><p>За твои волосы</p></div>
                 <div class="love-card"><div class="love-icon">🦋</div><p>За твою личность</p></div>
-                <div class="love-card love-card-wide"><div class="love-icon">❤️</div><p>Я люблю тебя всю и ту какая ты есть!</p></div>
+                <div class="love-card love-card-wide"><div class="love-icon">❤️</div><p>Впрочем я люблю тебя всю и ту какая ты есть!</p></div>
             </div>
         </div>
     </section>
@@ -289,16 +291,56 @@
             document.getElementById('real-flap').classList.add('open');
             setTimeout(() => {
                 document.getElementById('real-letter').classList.add('open');
+                setTimeout(() => startTypewriting(), 600);
             }, 800);
         }
+
         function closeLetter() {
-            document.getElementById('real-letter').classList.remove('open');
+            const letter = document.getElementById('real-letter');
+            const flap = document.getElementById('real-flap');
+            letter.style.opacity = '0';
             setTimeout(() => {
-                document.getElementById('real-flap').classList.remove('open');
-            }, 300);
+                letter.classList.remove('open');
+                letter.style.opacity = '';
+                flap.classList.remove('open');
+            }, 400);
         }
 
-        // Звёзды
+        function startTypewriting() {
+            const greeting = document.querySelector('.typewrite');
+            const paragraphs = document.querySelectorAll('.typewrite-p');
+            const sign = document.querySelector('.typewrite-sign');
+
+            function typeElement(el, text, cb) {
+                el.textContent = '';
+                let i = 0;
+                const interval = setInterval(() => {
+                    el.textContent += text.charAt(i);
+                    i++;
+                    if (i >= text.length) {
+                        clearInterval(interval);
+                        if (cb) setTimeout(cb, 300);
+                    }
+                }, 35);
+            }
+
+            typeElement(greeting, greeting.dataset.text, () => {
+                let pIndex = 0;
+                function nextP() {
+                    if (pIndex < paragraphs.length) {
+                        typeElement(paragraphs[pIndex], paragraphs[pIndex].dataset.text, () => {
+                            pIndex++;
+                            nextP();
+                        });
+                    } else {
+                        setTimeout(() => typeElement(sign, sign.dataset.text, null), 300);
+                    }
+                }
+                nextP();
+            });
+        }
+
+        // Звёзды загрузки
         const canvas = document.getElementById('stars-canvas');
         const ctx = canvas.getContext('2d');
         canvas.width = window.innerWidth;
@@ -325,6 +367,36 @@
         drawStars();
 
         setTimeout(() => document.getElementById('loader').classList.add('hide'), 5000);
+
+        // Звёзды на фоне сайта
+        const bgCanvas = document.getElementById('bg-stars');
+        const bgCtx = bgCanvas.getContext('2d');
+        bgCanvas.width = window.innerWidth;
+        bgCanvas.height = window.innerHeight;
+        const bgStars = Array.from({length: 200}, () => ({
+            x: Math.random() * bgCanvas.width,
+            y: Math.random() * bgCanvas.height,
+            r: Math.random() * 1.5 + 0.3,
+            alpha: Math.random() * 0.7 + 0.1,
+            speed: Math.random() * 0.01 + 0.003
+        }));
+        function drawBgStars() {
+            bgCtx.clearRect(0, 0, bgCanvas.width, bgCanvas.height);
+            bgStars.forEach(s => {
+                s.alpha += s.speed;
+                if (s.alpha > 0.9 || s.alpha < 0.1) s.speed *= -1;
+                bgCtx.beginPath();
+                bgCtx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+                bgCtx.fillStyle = `rgba(255, 220, 230, ${s.alpha})`;
+                bgCtx.fill();
+            });
+            requestAnimationFrame(drawBgStars);
+        }
+        drawBgStars();
+        window.addEventListener('resize', () => {
+            bgCanvas.width = window.innerWidth;
+            bgCanvas.height = window.innerHeight;
+        });
 
         // Слайдшоу
         let currentSlide = 0;
@@ -365,6 +437,35 @@
         }
         setInterval(createHeart, 600);
 
+        // Плеер
+        const audio = document.getElementById('mainAudio');
+        const playBtn = document.getElementById('playBtn');
+        const progressFill = document.getElementById('progressFill');
+        const playerTime = document.getElementById('playerTime');
+
+        function togglePlay() {
+            if (audio.paused) {
+                audio.play();
+                playBtn.textContent = '⏸';
+            } else {
+                audio.pause();
+                playBtn.textContent = '▶';
+            }
+        }
+        audio.addEventListener('timeupdate', () => {
+            const pct = (audio.currentTime / audio.duration) * 100;
+            progressFill.style.width = pct + '%';
+            const m = Math.floor(audio.currentTime / 60);
+            const s = Math.floor(audio.currentTime % 60).toString().padStart(2, '0');
+            playerTime.textContent = m + ':' + s;
+        });
+        function seekAudio(e) {
+            const bar = document.getElementById('progressBar');
+            const rect = bar.getBoundingClientRect();
+            const pct = (e.clientX - rect.left) / rect.width;
+            audio.currentTime = pct * audio.duration;
+        }
+
         // Лайтбокс
         document.querySelectorAll('.masonry-item img').forEach(img => {
             img.addEventListener('click', () => {
@@ -376,81 +477,24 @@
             document.getElementById('lightbox').style.display = 'none';
         }
 
+        // Печатная машинка на главной
+        const typeText = 'С того дня как ты появилась в моей жизни — всё изменилось ✨';
+        let typeIndex = 0;
+        const typeEl = document.getElementById('typewriter');
+        function typeWriter() {
+            if (typeIndex < typeText.length) {
+                typeEl.textContent += typeText.charAt(typeIndex);
+                typeIndex++;
+                setTimeout(typeWriter, 60);
+            }
+        }
+        setTimeout(typeWriter, 5500);
+
         // Анимация скролла
         const observer = new IntersectionObserver((entries) => {
             entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
         }, { threshold: 0.1 });
-        document.querySelectorAll('.timeline-item, .masonry-item, .letter, .love-card, .stat-card, .plan-card').forEach(el => observer.observe(el));
-        // Звёздное небо на весь сайт
-const bgCanvas = document.getElementById('bg-stars');
-const bgCtx = bgCanvas.getContext('2d');
-bgCanvas.width = window.innerWidth;
-bgCanvas.height = window.innerHeight;
-const bgStars = Array.from({length: 200}, () => ({
-    x: Math.random() * bgCanvas.width,
-    y: Math.random() * bgCanvas.height,
-    r: Math.random() * 1.5 + 0.3,
-    alpha: Math.random() * 0.7 + 0.1,
-    speed: Math.random() * 0.01 + 0.003
-}));
-function drawBgStars() {
-    bgCtx.clearRect(0, 0, bgCanvas.width, bgCanvas.height);
-    bgStars.forEach(s => {
-        s.alpha += s.speed;
-        if (s.alpha > 0.9 || s.alpha < 0.1) s.speed *= -1;
-        bgCtx.beginPath();
-        bgCtx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
-        bgCtx.fillStyle = `rgba(255, 220, 230, ${s.alpha})`;
-        bgCtx.fill();
-    });
-    requestAnimationFrame(drawBgStars);
-}
-drawBgStars();
-window.addEventListener('resize', () => {
-    bgCanvas.width = window.innerWidth;
-    bgCanvas.height = window.innerHeight;
-});
-
-// Печатная машинка
-const typeText = 'С того дня как ты появилась в моей жизни — всё изменилось ✨';
-let typeIndex = 0;
-const typeEl = document.getElementById('typewriter');
-function typeWriter() {
-    if (typeIndex < typeText.length) {
-        typeEl.textContent += typeText.charAt(typeIndex);
-        typeIndex++;
-        setTimeout(typeWriter, 60);
-    }
-}
-setTimeout(typeWriter, 5500);
-    </script><script>
-    const audio = document.getElementById('mainAudio');
-    const playBtn = document.getElementById('playBtn');
-    const progressFill = document.getElementById('progressFill');
-    const playerTime = document.getElementById('playerTime');
-
-    function togglePlay() {
-        if (audio.paused) {
-            audio.play();
-            playBtn.textContent = '⏸';
-        } else {
-            audio.pause();
-            playBtn.textContent = '▶';
-        }
-    }
-    audio.addEventListener('timeupdate', () => {
-        const pct = (audio.currentTime / audio.duration) * 100;
-        progressFill.style.width = pct + '%';
-        const m = Math.floor(audio.currentTime / 60);
-        const s = Math.floor(audio.currentTime % 60).toString().padStart(2, '0');
-        playerTime.textContent = m + ':' + s;
-    });
-    function seekAudio(e) {
-        const bar = document.getElementById('progressBar');
-        const rect = bar.getBoundingClientRect();
-        const pct = (e.clientX - rect.left) / rect.width;
-        audio.currentTime = pct * audio.duration;
-    }
-</script>
+        document.querySelectorAll('.timeline-item, .masonry-item, .love-card, .stat-card, .plan-card').forEach(el => observer.observe(el));
+    </script>
 </body>
 </html>
