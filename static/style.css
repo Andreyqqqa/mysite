@@ -1,0 +1,107 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    background: #0a0a0a;
+    color: #eee;
+    font-family: 'Segoe UI', sans-serif;
+}
+
+/* Навбар */
+nav {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 40px;
+    background: #111;
+    border-bottom: 2px solid #ff4d4d;
+}
+
+.logo {
+    font-size: 22px;
+    font-weight: bold;
+    color: #ff4d4d;
+    letter-spacing: 2px;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    gap: 30px;
+}
+
+nav ul a {
+    color: #eee;
+    text-decoration: none;
+    font-size: 15px;
+    transition: color 0.3s;
+}
+
+nav ul a:hover {
+    color: #ff4d4d;
+}
+
+/* Герой */
+.hero {
+    text-align: center;
+    padding: 100px 20px;
+}
+
+.hero h1 {
+    font-size: 52px;
+    margin-bottom: 20px;
+}
+
+.hero h1 span {
+    color: #ff4d4d;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #aaa;
+    margin-bottom: 40px;
+}
+
+.btn {
+    background: #ff4d4d;
+    color: white;
+    padding: 14px 35px;
+    border-radius: 30px;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    transition: 0.3s;
+}
+
+.btn:hover {
+    background: #cc0000;
+    transform: scale(1.05);
+}
+
+/* Карточки */
+.cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    padding: 40px;
+    flex-wrap: wrap;
+}
+
+.card {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 30px 50px;
+    font-size: 20px;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.card:hover {
+    border-color: #ff4d4d;
+    transform: translateY(-5px);
+    box-shadow: 0 10px 30px rgba(255, 77, 77, 0.2);
+}
