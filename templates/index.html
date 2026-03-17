@@ -125,17 +125,22 @@
         </div>
     </div>
 
-    <div class="music-bar">
-        <div class="music-bar-inner">
-            <span class="music-label">🎵 Наша песня</span>
-            <iframe style="border-radius:12px"
-                src="https://open.spotify.com/embed/track/4QweW3ZcUbG6cUNlVNU9hW?utm_source=generator&theme=0"
-                width="100%" height="80" frameborder="0"
-                allow="autoplay; clipboard-write; encrypted-media; fullscreen; picture-in-picture"
-                loading="lazy">
-            </iframe>
+<div class="music-bar">
+    <div class="music-bar-inner">
+        <span class="music-label">🎵 Наша песня — Cupsize — Минус Плюс</span>
+        <div class="custom-player">
+            <button class="play-btn" id="playBtn" onclick="togglePlay()">▶</button>
+            <div class="player-info">
+                <div class="player-title">Cupsize — Минус Плюс</div>
+                <div class="player-progress" onclick="seekAudio(event)" id="progressBar">
+                    <div class="player-progress-fill" id="progressFill"></div>
+                </div>
+            </div>
+            <div class="player-time" id="playerTime">0:00</div>
+            <audio id="mainAudio" src="/static/song.mp3"></audio>
         </div>
     </div>
+</div>
 
     <section class="section fullscreen" id="letter">
         <div class="letter-wrap">
@@ -418,6 +423,34 @@ function typeWriter() {
     }
 }
 setTimeout(typeWriter, 5500);
-    </script>
+    </script><script>
+    const audio = document.getElementById('mainAudio');
+    const playBtn = document.getElementById('playBtn');
+    const progressFill = document.getElementById('progressFill');
+    const playerTime = document.getElementById('playerTime');
+
+    function togglePlay() {
+        if (audio.paused) {
+            audio.play();
+            playBtn.textContent = '⏸';
+        } else {
+            audio.pause();
+            playBtn.textContent = '▶';
+        }
+    }
+    audio.addEventListener('timeupdate', () => {
+        const pct = (audio.currentTime / audio.duration) * 100;
+        progressFill.style.width = pct + '%';
+        const m = Math.floor(audio.currentTime / 60);
+        const s = Math.floor(audio.currentTime % 60).toString().padStart(2, '0');
+        playerTime.textContent = m + ':' + s;
+    });
+    function seekAudio(e) {
+        const bar = document.getElementById('progressBar');
+        const rect = bar.getBoundingClientRect();
+        const pct = (e.clientX - rect.left) / rect.width;
+        audio.currentTime = pct * audio.duration;
+    }
+</script>
 </body>
 </html>
