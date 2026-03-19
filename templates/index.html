@@ -176,50 +176,51 @@
     <section class="section" id="history">
         <div class="section-inner">
             <h2 class="section-title">📖 Наша история</h2>
-          <div class="timeline">
-    <div class="timeline-item">
-        <div class="timeline-dot">💬</div>
-        <div class="timeline-text">
-            <h3>7 июля 2025</h3>
-            <p>Начало нашей переписки в Telegram — с этого всё и началось 🌸</p>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot">💬</div>
+                    <div class="timeline-text">
+                        <h3>7 июля 2025</h3>
+                        <p>Начало нашей переписки в Telegram — с этого всё и началось 🌸</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot">🚶</div>
+                    <div class="timeline-text">
+                        <h3>30 июля 2025</h3>
+                        <p>Первая совместная прогулка — я увидел тебя и понял что ты особенная ✨</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot">❤️</div>
+                    <div class="timeline-text">
+                        <h3>3 августа 2025</h3>
+                        <p>Очень важная дата — именно в этот день мы начали наши с тобой отношения 🌹</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot">🎉</div>
+                    <div class="timeline-text">
+                        <h3>3 сентября 2025</h3>
+                        <p>Первый месяц наших отношений — и это только начало! 🥂</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot">💫</div>
+                    <div class="timeline-text">
+                        <h3>3 февраля 2026</h3>
+                        <p>Наши с тобой полгода вместе — каждый день с тобой бесценен 💕</p>
+                    </div>
+                </div>
+                <div class="timeline-item timeline-item-future">
+                    <div class="timeline-dot">∞</div>
+                    <div class="timeline-text">
+                        <h3>Продолжение следует...</h3>
+                        <p>Наша с тобой история так и будет дополняться вплоть до смерти наших душ 🌙</p>
+                    </div>
+                </div>
+            </div>
         </div>
-    </div>
-    <div class="timeline-item">
-        <div class="timeline-dot">🚶</div>
-        <div class="timeline-text">
-            <h3>30 июля 2025</h3>
-            <p>Первая совместная прогулка — я увидел тебя и понял что ты особенная ✨</p>
-        </div>
-    </div>
-    <div class="timeline-item">
-        <div class="timeline-dot">❤️</div>
-        <div class="timeline-text">
-            <h3>3 августа 2025</h3>
-            <p>Очень важная дата — именно в этот день мы начали наши с тобой отношения 🌹</p>
-        </div>
-    </div>
-    <div class="timeline-item">
-        <div class="timeline-dot">🎉</div>
-        <div class="timeline-text">
-            <h3>3 сентября 2025</h3>
-            <p>Первый месяц наших отношений — и это только начало! 🥂</p>
-        </div>
-    </div>
-    <div class="timeline-item">
-        <div class="timeline-dot">💫</div>
-        <div class="timeline-text">
-            <h3>3 февраля 2026</h3>
-            <p>Наши с тобой полгода вместе — каждый день с тобой бесценен 💕</p>
-        </div>
-    </div>
-    <div class="timeline-item timeline-item-future">
-        <div class="timeline-dot">∞</div>
-        <div class="timeline-text">
-            <h3>Продолжение следует...</h3>
-            <p>Наша с тобой история так и будет дополняться вплоть до смерти наших душ 🌙</p>
-        </div>
-    </div>
-</div>
     </section>
 
     <section class="section" id="love">
@@ -238,7 +239,7 @@
                 <div class="love-card"><div class="love-icon">🌹</div><p>За наши прекрасные чувства</p></div>
                 <div class="love-card"><div class="love-icon">💆</div><p>За твои волосы</p></div>
                 <div class="love-card"><div class="love-icon">🦋</div><p>За твою личность</p></div>
-                <div class="love-card love-card-wide"><div class="love-icon">❤️</div><p> я люблю тебя всю и ту какая ты есть!</p></div>
+                <div class="love-card love-card-wide"><div class="love-icon">❤️</div><p>я люблю тебя всю и ту какая ты есть!</p></div>
             </div>
         </div>
     </section>
@@ -304,7 +305,7 @@
                 <div class="masonry-item masonry-tall"><img src="/static/images/photo27.jpg" alt="фото 27"></div>
                 <div class="masonry-item"><img src="/static/images/photo28.jpg" alt="фото 28"></div>
                 <div class="masonry-item"><img src="/static/images/photo29.jpg" alt="фото 29"></div>
-<div class="masonry-item masonry-tall"><img src="/static/images/photo30.jpg" alt="фото 30"></div>
+                <div class="masonry-item masonry-tall"><img src="/static/images/photo30.jpg" alt="фото 30"></div>
             </div>
         </div>
     </section>
@@ -470,11 +471,16 @@
         }
         setInterval(createHeart, 600);
 
-        // Плеер
+        // Плеер — исправленный
         const audio = document.getElementById('mainAudio');
         const playBtn = document.getElementById('playBtn');
         const progressFill = document.getElementById('progressFill');
         const playerTime = document.getElementById('playerTime');
+
+        audio.playbackRate = 1.0;
+        audio.addEventListener('loadedmetadata', () => {
+            audio.playbackRate = 1.0;
+        });
 
         function togglePlay() {
             if (audio.paused) {
@@ -528,26 +534,29 @@
             entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
         }, { threshold: 0.1 });
         document.querySelectorAll('.timeline-item, .masonry-item, .love-card, .stat-card, .plan-card').forEach(el => observer.observe(el));
+
         // Активный пункт меню при скролле
-const sections = document.querySelectorAll('section[id]');
-const navLinks = document.querySelectorAll('nav ul a');
-window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(s => {
-        if (window.scrollY >= s.offsetTop - 100) current = s.id;
-    });
-    navLinks.forEach(a => {
-        a.classList.remove('active');
-        if (a.getAttribute('href') === '#' + current) a.classList.add('active');
-    });
-});// Параллакс на главной
-window.addEventListener('scroll', () => {
-    const scrolled = window.scrollY;
-    const slides = document.querySelectorAll('.slide.active');
-    slides.forEach(slide => {
-        slide.style.transform = `translateY(${scrolled * 0.4}px)`;
-    });
-});
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('nav ul a');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(s => {
+                if (window.scrollY >= s.offsetTop - 100) current = s.id;
+            });
+            navLinks.forEach(a => {
+                a.classList.remove('active');
+                if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+            });
+        });
+
+        // Параллакс на главной
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            const slides = document.querySelectorAll('.slide.active');
+            slides.forEach(slide => {
+                slide.style.transform = `translateY(${scrolled * 0.4}px)`;
+            });
+        });
     </script>
 </body>
 </html>
