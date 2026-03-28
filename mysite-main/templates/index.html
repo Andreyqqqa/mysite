@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+    <title>Андрей & Карина ❤️</title>
+    <link rel="stylesheet" href="/static/style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;1,400&family=Raleway:wght@300;400;600&family=Great+Vibes&family=Cormorant+Garamond:ital,wght@0,300;0,400;0,600;1,300;1,400&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <div id="loader">
+        <canvas id="stars-canvas"></canvas>
+        <div class="loader-content">
+            <svg class="writing-svg" viewBox="0 0 500 120" xmlns="http://www.w3.org/2000/svg">
+                <text x="50%" y="80" text-anchor="middle"
+                    font-family="'Cormorant Garamond', serif"
+                    font-size="72" fill="none"
+                    stroke="#ff6b8a" stroke-width="1.5"
+                    stroke-dasharray="1000" stroke-dashoffset="1000"
+                    id="writing-text">Андрей & Карина</text>
+            </svg>
+            <div class="loader-heart" id="loader-heart">❤️</div>
+            <div class="loader-date" id="loader-date">03.08.2025</div>
+        </div>
+    </div>
+
+    <div id="particles"></div>
+    <canvas id="bg-stars"></canvas>
+
+    <nav>
+        <div class="logo">А ♥ К</div>
+        <div class="burger" onclick="toggleMenu()">☰</div>
+        <ul id="nav-menu">
+            <li><a href="#home" onclick="toggleMenu()">Главная</a></li>
+            <li><a href="#letter" onclick="toggleMenu()">Письмо</a></li>
+            <li><a href="#history" onclick="toggleMenu()">История</a></li>
+            <li><a href="#love" onclick="toggleMenu()">Люблю тебя</a></li>
+            <li><a href="#stats" onclick="toggleMenu()">Цифры</a></li>
+            <li><a href="#plans" onclick="toggleMenu()">Планы</a></li>
+            <li><a href="#gallery" onclick="toggleMenu()">Фото</a></li>
+        </ul>
+    </nav>
+
+    <section class="section fullscreen" id="home">
+        <div class="slideshow">
+            <div class="slide" style="background-image: url('/static/images/photo1.jpg')"></div>
+            <div class="slide" style="background-image: url('/static/images/photo2.jpg')"></div>
+            <div class="slide" style="background-image: url('/static/images/photo3.jpg')"></div>
+            <div class="slide" style="background-image: url('/static/images/photo4.jpg')"></div>
+            <div class="slide" style="background-image: url('/static/images/photo5.jpg')"></div>
+        </div>
+        <div class="slideshow-overlay"></div>
+        <div class="hero-content">
+            <p class="pre-title">с 3 августа 2025 года 🌹</p>
+            <h1>Андрей <span>&</span> Карина</h1>
+            <p class="subtitle" id="typewriter"></p>
+            <div class="counter-box">
+                <div class="counter-item"><span id="days">0</span><small>дней</small></div>
+                <div class="counter-item"><span id="hours">0</span><small>часов</small></div>
+                <div class="counter-item"><span id="minutes">0</span><small>минут</small></div>
+                <div class="counter-item"><span id="seconds">0</span><small>секунд</small></div>
+            </div>
+            <a href="#letter" class="scroll-btn">Читать письмо ↓</a>
+        </div>
+    </section>
+
+    <div class="photo-strip">
+        <div class="photo-strip-inner">
+            <div class="strip-item" style="background-image: url('/static/images/photo1.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo2.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo3.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo4.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo5.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo6.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo7.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo8.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo9.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo10.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo11.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo12.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo13.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo14.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo15.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo16.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo17.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo18.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo19.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo20.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo21.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo22.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo23.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo24.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo25.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo26.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo27.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo28.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo1.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo2.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo3.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo4.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo5.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo6.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo7.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo8.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo9.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo10.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo11.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo12.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo13.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo14.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo15.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo16.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo17.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo18.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo19.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo20.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo21.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo22.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo23.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo24.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo25.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo26.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo27.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo28.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo29.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo30.jpg')"></div>
+            <div class="strip-item" style="background-image: url('/static/images/photo31.jpg')"></div>
+<div class="strip-item" style="background-image: url('/static/images/photo32.jpg')"></div>
+<div class="strip-item" style="background-image: url('/static/images/photo33.jpg')"></div>
+        </div>
+    </div>
+
+    <div class="music-bar">
+        <div class="music-bar-inner">
+            <span class="music-label">🎵 Наша песня — Cupsize — Минус Плюс</span>
+            <div class="custom-player">
+                <button class="play-btn" id="playBtn" onclick="togglePlay()">▶</button>
+                <div class="player-info">
+                    <div class="player-title">Cupsize — Минус Плюс</div>
+                    <div class="player-progress" onclick="seekAudio(event)" id="progressBar">
+                        <div class="player-progress-fill" id="progressFill"></div>
+                    </div>
+                </div>
+                <div class="player-time" id="playerTime">0:00</div>
+                <audio id="mainAudio" src="/static/song.mp3"></audio>
+            </div>
+        </div>
+    </div>
+
+    <section class="section fullscreen" id="letter">
+        <div class="letter-wrap">
+            <div class="letter-envelope" id="real-envelope" onclick="openLetter()">
+                <div class="letter-envelope-body">
+                    <div class="letter-envelope-flap" id="real-flap"></div>
+                    <div class="letter-envelope-front">
+                        <div class="letter-envelope-to">Для Карины ♥</div>
+                        <div class="letter-envelope-hint">Нажми чтобы открыть</div>
+                    </div>
+                </div>
+            </div>
+            <div class="real-letter" id="real-letter">
+                <div class="real-letter-inner">
+                    <div class="real-letter-photo" style="background-image: url('/static/images/photo5.jpg')"></div>
+                    <div class="real-letter-date">3 августа 2025 г.</div>
+                    <div class="real-letter-greeting typewrite" data-text="Моя прекрасная девочка,"></div>
+                    <div class="real-letter-body">
+                        <p class="typewrite-p" data-text="я тебя очень люблю и я очень дорожу нашими отношениями. Я верю в то, что у нас всё будет хорошо и мы проведём наши жизни вместе!"></p>
+                        <p class="typewrite-p" data-text="Мы обязательно воплотим наши планы в реальность и сделаем то, что хотели — и у нас обязательно всё получится!"></p>
+                        <p class="typewrite-p" data-text="Очень сильно тебя люблю!"></p>
+                    </div>
+                    <div class="real-letter-sign typewrite-sign" data-text="С любовью, твой Андрей ❤️"></div>
+                    <button class="letter-close-btn" onclick="closeLetter()">Закрыть письмо ✕</button>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="history">
+        <div class="section-inner">
+            <h2 class="section-title">📖 Наша история</h2>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot">💬</div>
+                    <div class="timeline-text">
+                        <h3>7 июля 2025</h3>
+                        <p>Начало нашей переписки в Telegram — с этого всё и началось 🌸</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot">🚶</div>
+                    <div class="timeline-text">
+                        <h3>30 июля 2025</h3>
+                        <p>Первая совместная прогулка — я увидел тебя и понял что ты особенная ✨</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot">❤️</div>
+                    <div class="timeline-text">
+                        <h3>3 августа 2025</h3>
+                        <p>Очень важная дата — именно в этот день мы начали наши с тобой отношения 🌹</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot">🎉</div>
+                    <div class="timeline-text">
+                        <h3>3 сентября 2025</h3>
+                        <p>Первый месяц наших отношений — и это только начало! 🥂</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot">💫</div>
+                    <div class="timeline-text">
+                        <h3>3 февраля 2026</h3>
+                        <p>Наши с тобой полгода вместе — каждый день с тобой бесценен 💕</p>
+                    </div>
+                </div>
+                <div class="timeline-item timeline-item-future">
+                    <div class="timeline-dot">∞</div>
+                    <div class="timeline-text">
+                        <h3>Продолжение следует...</h3>
+                        <p>Наша с тобой история так и будет дополняться вплоть до смерти наших душ 🌙</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="love">
+        <div class="section-inner">
+            <h2 class="section-title">💕 Почему я люблю тебя</h2>
+            <p class="love-subtitle">Карина, вот лишь часть причин...</p>
+            <div class="love-grid">
+                <div class="love-card"><div class="love-icon">🤗</div><p>За твою поддержку</p></div>
+                <div class="love-card"><div class="love-icon">😊</div><p>За твою улыбку</p></div>
+                <div class="love-card"><div class="love-icon">👁️</div><p>За твои красивые глаза</p></div>
+                <div class="love-card"><div class="love-icon">✨</div><p>За твоё прекрасное тело</p></div>
+                <div class="love-card"><div class="love-icon">💝</div><p>За твою любовь ко мне</p></div>
+                <div class="love-card"><div class="love-icon">🎵</div><p>За твой прекрасный голос</p></div>
+                <div class="love-card"><div class="love-icon">😄</div><p>За твой прекрасный смех</p></div>
+                <div class="love-card"><div class="love-icon">💫</div><p>За нашу прекрасную любовь</p></div>
+                <div class="love-card"><div class="love-icon">🌹</div><p>За наши прекрасные чувства</p></div>
+                <div class="love-card"><div class="love-icon">💆</div><p>За твои волосы</p></div>
+                <div class="love-card"><div class="love-icon">🦋</div><p>За твою личность</p></div>
+                <div class="love-card love-card-wide"><div class="love-icon">❤️</div><p>я люблю тебя всю и ту какая ты есть!</p></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="stats">
+        <div class="section-inner">
+            <h2 class="section-title">🔢 Наши цифры</h2>
+            <p class="love-subtitle">Всё что есть между нами</p>
+            <div class="stats-grid">
+                <div class="stat-card"><div class="stat-number" id="stat-days">0</div><div class="stat-label">дней вместе</div></div>
+                <div class="stat-card"><div class="stat-number">∞</div><div class="stat-label">сообщений</div></div>
+                <div class="stat-card"><div class="stat-number">∞</div><div class="stat-label">встреч</div></div>
+                <div class="stat-card"><div class="stat-number">∞</div><div class="stat-label">поцелуев</div></div>
+                <div class="stat-card"><div class="stat-number">∞</div><div class="stat-label">объятий</div></div>
+                <div class="stat-card stat-card-wide"><div class="stat-number">∞</div><div class="stat-label">раз сказано "я тебя люблю" ❤️</div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="plans">
+        <div class="section-inner">
+            <h2 class="section-title">🌟 Наши планы</h2>
+            <p class="love-subtitle">То что ждёт нас впереди...</p>
+            <div class="plans-grid">
+                <div class="plan-card"><div class="plan-icon">😊</div><div class="plan-text">Прожить счастливую жизнь</div><div class="plan-check">🤍</div></div>
+                <div class="plan-card"><div class="plan-icon">💑</div><div class="plan-text">Поддерживать хорошие отношения</div><div class="plan-check">🤍</div></div>
+                <div class="plan-card"><div class="plan-icon">🐱</div><div class="plan-text">Завести котёнка</div><div class="plan-check">🤍</div></div>
+                <div class="plan-card plan-card-future"><div class="plan-icon">🔮</div><div class="plan-text">Остальное в будущем...</div><div class="plan-check">✨</div></div>
+            </div>
+        </div>
+    </section>
+
+    <section class="section" id="gallery">
+        <div class="section-inner">
+            <h2 class="section-title">📸 Наши моменты</h2>
+            <div class="masonry">
+                <div class="masonry-item"><img src="/static/images/photo1.jpg" alt="фото 1"></div>
+                <div class="masonry-item masonry-tall"><img src="/static/images/photo2.jpg" alt="фото 2"></div>
+                <div class="masonry-item"><img src="/static/images/photo3.jpg" alt="фото 3"></div>
+                <div class="masonry-item masonry-wide"><img src="/static/images/photo4.jpg" alt="фото 4"></div>
+                <div class="masonry-item"><img src="/static/images/photo5.jpg" alt="фото 5"></div>
+                <div class="masonry-item masonry-tall"><img src="/static/images/photo6.jpg" alt="фото 6"></div>
+                <div class="masonry-item"><img src="/static/images/photo7.jpg" alt="фото 7"></div>
+                <div class="masonry-item masonry-wide"><img src="/static/images/photo8.jpg" alt="фото 8"></div>
+                <div class="masonry-item"><img src="/static/images/photo9.jpg" alt="фото 9"></div>
+                <div class="masonry-item"><img src="/static/images/photo10.jpg" alt="фото 10"></div>
+                <div class="masonry-item masonry-tall"><img src="/static/images/photo11.jpg" alt="фото 11"></div>
+                <div class="masonry-item"><img src="/static/images/photo12.jpg" alt="фото 12"></div>
+                <div class="masonry-item masonry-tall"><img src="/static/images/photo13.jpg" alt="фото 13"></div>
+                <div class="masonry-item"><img src="/static/images/photo14.jpg" alt="фото 14"></div>
+                <div class="masonry-item masonry-wide"><img src="/static/images/photo15.jpg" alt="фото 15"></div>
+                <div class="masonry-item"><img src="/static/images/photo16.jpg" alt="фото 16"></div>
+                <div class="masonry-item masonry-tall"><img src="/static/images/photo17.jpg" alt="фото 17"></div>
+                <div class="masonry-item"><img src="/static/images/photo18.jpg" alt="фото 18"></div>
+                <div class="masonry-item"><img src="/static/images/photo19.jpg" alt="фото 19"></div>
+                <div class="masonry-item masonry-tall"><img src="/static/images/photo20.jpg" alt="фото 20"></div>
+                <div class="masonry-item"><img src="/static/images/photo21.jpg" alt="фото 21"></div>
+                <div class="masonry-item masonry-wide"><img src="/static/images/photo22.jpg" alt="фото 22"></div>
+                <div class="masonry-item"><img src="/static/images/photo23.jpg" alt="фото 23"></div>
+                <div class="masonry-item masonry-tall"><img src="/static/images/photo24.jpg" alt="фото 24"></div>
+                <div class="masonry-item"><img src="/static/images/photo25.jpg" alt="фото 25"></div>
+                <div class="masonry-item"><img src="/static/images/photo26.jpg" alt="фото 26"></div>
+                <div class="masonry-item masonry-tall"><img src="/static/images/photo27.jpg" alt="фото 27"></div>
+                <div class="masonry-item"><img src="/static/images/photo28.jpg" alt="фото 28"></div>
+                <div class="masonry-item"><img src="/static/images/photo29.jpg" alt="фото 29"></div>
+                <div class="masonry-item masonry-tall"><img src="/static/images/photo30.jpg" alt="фото 30"></div>
+                <div class="masonry-item masonry-tall"><img src="/static/images/photo31.jpg" alt="фото 31"></div>
+<div class="masonry-item"><img src="/static/images/photo32.jpg" alt="фото 32"></div>
+<div class="masonry-item masonry-wide"><img src="/static/images/photo33.jpg" alt="фото 33"></div>
+            </div>
+        </div>
+    </section>
+
+    <footer><p>Сделано с ❤️ для Карины</p></footer>
+
+    <div id="lightbox" onclick="closeLightbox()">
+        <img id="lightbox-img" src="" alt="">
+    </div>
+
+    <script>
+        function toggleMenu() {
+            document.getElementById('nav-menu').classList.toggle('open');
+        }
+
+        function openLetter() {
+            document.getElementById('real-flap').classList.add('open');
+            setTimeout(() => {
+                document.getElementById('real-letter').classList.add('open');
+                setTimeout(() => startTypewriting(), 600);
+            }, 800);
+        }
+
+        function closeLetter() {
+            const letter = document.getElementById('real-letter');
+            const flap = document.getElementById('real-flap');
+            letter.style.opacity = '0';
+            setTimeout(() => {
+                letter.classList.remove('open');
+                letter.style.opacity = '';
+                flap.classList.remove('open');
+            }, 400);
+        }
+
+        function startTypewriting() {
+            const greeting = document.querySelector('.typewrite');
+            const paragraphs = document.querySelectorAll('.typewrite-p');
+            const sign = document.querySelector('.typewrite-sign');
+
+            function typeElement(el, text, cb) {
+                el.textContent = '';
+                let i = 0;
+                const interval = setInterval(() => {
+                    el.textContent += text.charAt(i);
+                    i++;
+                    if (i >= text.length) {
+                        clearInterval(interval);
+                        if (cb) setTimeout(cb, 300);
+                    }
+                }, 35);
+            }
+
+            typeElement(greeting, greeting.dataset.text, () => {
+                let pIndex = 0;
+                function nextP() {
+                    if (pIndex < paragraphs.length) {
+                        typeElement(paragraphs[pIndex], paragraphs[pIndex].dataset.text, () => {
+                            pIndex++;
+                            nextP();
+                        });
+                    } else {
+                        setTimeout(() => typeElement(sign, sign.dataset.text, null), 300);
+                    }
+                }
+                nextP();
+            });
+        }
+
+        // Звёзды загрузки
+        const canvas = document.getElementById('stars-canvas');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        const stars = Array.from({length: 150}, () => ({
+            x: Math.random() * canvas.width,
+            y: Math.random() * canvas.height,
+            r: Math.random() * 2 + 0.5,
+            alpha: Math.random(),
+            speed: Math.random() * 0.02 + 0.005
+        }));
+        function drawStars() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            stars.forEach(s => {
+                s.alpha += s.speed;
+                if (s.alpha > 1 || s.alpha < 0) s.speed *= -1;
+                ctx.beginPath();
+                ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+                ctx.fillStyle = `rgba(255, 200, 220, ${s.alpha})`;
+                ctx.fill();
+            });
+            requestAnimationFrame(drawStars);
+        }
+        drawStars();
+
+        setTimeout(() => document.getElementById('loader').classList.add('hide'), 5000);
+
+        // Звёзды на фоне сайта
+        const bgCanvas = document.getElementById('bg-stars');
+        const bgCtx = bgCanvas.getContext('2d');
+        bgCanvas.width = window.innerWidth;
+        bgCanvas.height = window.innerHeight;
+        const bgStars = Array.from({length: 200}, () => ({
+            x: Math.random() * bgCanvas.width,
+            y: Math.random() * bgCanvas.height,
+            r: Math.random() * 1.5 + 0.3,
+            alpha: Math.random() * 0.7 + 0.1,
+            speed: Math.random() * 0.01 + 0.003
+        }));
+        function drawBgStars() {
+            bgCtx.clearRect(0, 0, bgCanvas.width, bgCanvas.height);
+            bgStars.forEach(s => {
+                s.alpha += s.speed;
+                if (s.alpha > 0.9 || s.alpha < 0.1) s.speed *= -1;
+                bgCtx.beginPath();
+                bgCtx.arc(s.x, s.y, s.r, 0, Math.PI * 2);
+                bgCtx.fillStyle = `rgba(255, 220, 230, ${s.alpha})`;
+                bgCtx.fill();
+            });
+            requestAnimationFrame(drawBgStars);
+        }
+        drawBgStars();
+        window.addEventListener('resize', () => {
+            bgCanvas.width = window.innerWidth;
+            bgCanvas.height = window.innerHeight;
+        });
+
+        // Слайдшоу
+        let currentSlide = 0;
+        const slides = document.querySelectorAll('.slide');
+        slides[0].classList.add('active');
+        setInterval(() => {
+            slides[currentSlide].classList.remove('active');
+            currentSlide = (currentSlide + 1) % slides.length;
+            slides[currentSlide].classList.add('active');
+        }, 4000);
+
+        // Счётчик
+        const start = new Date(2025, 7, 3, 0, 0, 0);
+        function updateCounter() {
+            const diff = new Date() - start;
+            if (diff < 0) return;
+            document.getElementById('days').textContent = Math.floor(diff / 86400000);
+            document.getElementById('hours').textContent = Math.floor((diff % 86400000) / 3600000);
+            document.getElementById('minutes').textContent = Math.floor((diff % 3600000) / 60000);
+            document.getElementById('seconds').textContent = Math.floor((diff % 60000) / 1000);
+            document.getElementById('stat-days').textContent = Math.floor(diff / 86400000);
+        }
+        setInterval(updateCounter, 1000);
+        updateCounter();
+
+        // Сердечки
+        const container = document.getElementById('particles');
+        function createHeart() {
+            const heart = document.createElement('div');
+            heart.classList.add('heart');
+            heart.textContent = '❤️';
+            heart.style.left = Math.random() * 100 + 'vw';
+            heart.style.animationDuration = (Math.random() * 4 + 4) + 's';
+            heart.style.fontSize = (Math.random() * 16 + 10) + 'px';
+            heart.style.opacity = Math.random() * 0.5 + 0.2;
+            container.appendChild(heart);
+            setTimeout(() => heart.remove(), 8000);
+        }
+        setInterval(createHeart, 600);
+
+        // Плеер — исправленный
+        const audio = document.getElementById('mainAudio');
+        const playBtn = document.getElementById('playBtn');
+        const progressFill = document.getElementById('progressFill');
+        const playerTime = document.getElementById('playerTime');
+
+        audio.playbackRate = 1.0;
+        audio.addEventListener('loadedmetadata', () => {
+            audio.playbackRate = 1.0;
+        });
+
+        function togglePlay() {
+            if (audio.paused) {
+                audio.play();
+                playBtn.textContent = '⏸';
+            } else {
+                audio.pause();
+                playBtn.textContent = '▶';
+            }
+        }
+        audio.addEventListener('timeupdate', () => {
+            const pct = (audio.currentTime / audio.duration) * 100;
+            progressFill.style.width = pct + '%';
+            const m = Math.floor(audio.currentTime / 60);
+            const s = Math.floor(audio.currentTime % 60).toString().padStart(2, '0');
+            playerTime.textContent = m + ':' + s;
+        });
+        function seekAudio(e) {
+            const bar = document.getElementById('progressBar');
+            const rect = bar.getBoundingClientRect();
+            const pct = (e.clientX - rect.left) / rect.width;
+            audio.currentTime = pct * audio.duration;
+        }
+
+        // Лайтбокс
+        document.querySelectorAll('.masonry-item img').forEach(img => {
+            img.addEventListener('click', () => {
+                document.getElementById('lightbox').style.display = 'flex';
+                document.getElementById('lightbox-img').src = img.src;
+            });
+        });
+        function closeLightbox() {
+            document.getElementById('lightbox').style.display = 'none';
+        }
+
+        // Печатная машинка на главной
+        const typeText = 'С того дня как ты появилась в моей жизни — всё изменилось ✨';
+        let typeIndex = 0;
+        const typeEl = document.getElementById('typewriter');
+        function typeWriter() {
+            if (typeIndex < typeText.length) {
+                typeEl.textContent += typeText.charAt(typeIndex);
+                typeIndex++;
+                setTimeout(typeWriter, 60);
+            }
+        }
+        setTimeout(typeWriter, 5500);
+
+        // Анимация скролла
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(e => { if (e.isIntersecting) e.target.classList.add('visible'); });
+        }, { threshold: 0.1 });
+        document.querySelectorAll('.timeline-item, .masonry-item, .love-card, .stat-card, .plan-card').forEach(el => observer.observe(el));
+
+        // Активный пункт меню при скролле
+        const sections = document.querySelectorAll('section[id]');
+        const navLinks = document.querySelectorAll('nav ul a');
+        window.addEventListener('scroll', () => {
+            let current = '';
+            sections.forEach(s => {
+                if (window.scrollY >= s.offsetTop - 100) current = s.id;
+            });
+            navLinks.forEach(a => {
+                a.classList.remove('active');
+                if (a.getAttribute('href') === '#' + current) a.classList.add('active');
+            });
+        });
+
+        // Параллакс на главной
+        window.addEventListener('scroll', () => {
+            const scrolled = window.scrollY;
+            const slides = document.querySelectorAll('.slide.active');
+            slides.forEach(slide => {
+                slide.style.transform = `translateY(${scrolled * 0.4}px)`;
+            });
+        });
+    </script>
+</body>
+</html>
