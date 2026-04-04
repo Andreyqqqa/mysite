@@ -224,6 +224,55 @@ footer { position: relative; z-index: 10; text-align: center; padding: 30px; col
 @keyframes heartBeat { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.2); } }
 .loader-date { font-family: 'Cormorant Garamond', serif; font-size: 32px; font-style: italic; font-weight: 300; color: #aaa; opacity: 0; animation: fadeInUp 0.8s ease forwards 3.2s; letter-spacing: 3px; }
 
+/* Пульсирующий логотип */
+.logo { animation: logoGlow 2s ease-in-out infinite; }
+@keyframes logoGlow {
+    0%, 100% { text-shadow: 0 0 10px rgba(255, 107, 138, 0.5); }
+    50% { text-shadow: 0 0 25px rgba(255, 107, 138, 1), 0 0 50px rgba(255, 107, 138, 0.5); }
+}
+
+/* Активный пункт меню */
+nav ul a.active { color: #ff6b8a; position: relative; }
+nav ul a.active::after { content: ''; position: absolute; bottom: -4px; left: 0; right: 0; height: 1px; background: #ff6b8a; box-shadow: 0 0 8px rgba(255, 107, 138, 0.8); }
+
+.timeline-item-future { border-style: dashed; border-color: #5d0040; opacity: 0; background: rgba(255, 107, 138, 0.02); }
+.timeline-item-future.visible { opacity: 1; transform: translateX(0); }
+.timeline-item-future .timeline-dot { font-size: 32px; color: #ff6b8a; }
+.timeline-item-future h3 { font-style: italic; }
+.timeline-item-future p { font-style: italic; color: #666 !important; }
+
+/* Места и события — masonry */
+.places-grid-cards {
+    columns: 3;
+    column-gap: 15px;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+.place-event-card {
+    break-inside: avoid;
+    display: inline-block;
+    width: 100%;
+    margin-bottom: 15px;
+    background: rgba(78, 205, 196, 0.04);
+    border: 1px solid #0d2d2a;
+    border-radius: 20px;
+    overflow: hidden;
+    transition: all 0.3s;
+    opacity: 0;
+    transform: translateY(20px);
+}
+.place-event-card.visible { opacity: 1; transform: translateY(0); }
+.place-event-card:hover { border-color: #4ecdc4; transform: translateY(-5px); box-shadow: 0 10px 30px rgba(78, 205, 196, 0.15); }
+.place-event-img-wrap { width: 100%; overflow: hidden; }
+.place-event-img-wrap img { width: 100%; height: auto; object-fit: contain; display: block; transition: transform 0.4s; }
+.place-event-card:hover .place-event-img-wrap img { transform: scale(1.05); }
+.place-event-body { padding: 20px; }
+.place-event-date { color: #4ecdc4; font-size: 12px; letter-spacing: 1px; margin-bottom: 8px; text-transform: uppercase; }
+.place-event-title { font-family: 'Playfair Display', serif; font-size: 17px; color: #fff; margin-bottom: 8px; }
+.place-event-desc { color: #888; font-size: 13px; line-height: 1.5; margin-bottom: 12px; }
+.place-event-geo { display: inline-block; color: #4ecdc4; font-size: 12px; text-decoration: none; border: 1px solid #0d2d2a; padding: 5px 12px; border-radius: 20px; transition: 0.3s; }
+.place-event-geo:hover { background: #4ecdc4; color: #050a0a; border-color: #4ecdc4; }
+
 @media (max-width: 768px) {
     nav { padding: 12px 15px; }
     .burger { display: block; }
@@ -273,6 +322,8 @@ footer { position: relative; z-index: 10; text-align: center; padding: 30px; col
     .letter-envelope-front::before { border-left-width: 130px; border-right-width: 130px; border-bottom-width: 90px; }
     .letter-envelope-front::after { bottom: 90px; border-left-width: 130px; border-right-width: 130px; border-bottom-width: 90px; }
     .letter-envelope-to { font-size: 18px; }
+    .places-grid-cards { columns: 1; }
+    .place-event-img-wrap { height: auto; }
 }
 
 @media (max-width: 400px) {
@@ -288,44 +339,4 @@ footer { position: relative; z-index: 10; text-align: center; padding: 30px; col
 @supports (-webkit-touch-callout: none) {
     .fullscreen { min-height: -webkit-fill-available; }
     .slide { -webkit-background-size: cover; }
-}/* Пульсирующий логотип */
-.logo {
-    animation: logoGlow 2s ease-in-out infinite;
 }
-@keyframes logoGlow {
-    0%, 100% { text-shadow: 0 0 10px rgba(255, 107, 138, 0.5); }
-    50% { text-shadow: 0 0 25px rgba(255, 107, 138, 1), 0 0 50px rgba(255, 107, 138, 0.5); }
-}/* Активный пункт меню */
-nav ul a.active {
-    color: #ff6b8a;
-    position: relative;
-}
-nav ul a.active::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0; right: 0;
-    height: 1px;
-    background: #ff6b8a;
-    box-shadow: 0 0 8px rgba(255, 107, 138, 0.8);
-}.timeline-item-future {
-    border-style: dashed;
-    border-color: #5d0040;
-    opacity: 0;
-    background: rgba(255, 107, 138, 0.02);
-}
-.timeline-item-future.visible {
-    opacity: 1;
-    transform: translateX(0);
-}
-.timeline-item-future .timeline-dot {
-    font-size: 32px;
-    color: #ff6b8a;
-}
-.timeline-item-future h3 {
-    font-style: italic;
-}
-.timeline-item-future p {
-    font-style: italic;
-    color: #666 !important;
-}р
