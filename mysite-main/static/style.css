@@ -243,10 +243,11 @@ nav ul a.active::after { content: ''; position: absolute; bottom: -4px; left: 0;
 
 /* Места и события — masonry */
 .places-grid-cards {
-    columns: 3;
-    column-gap: 15px;
-    max-width: 1000px;
+    display: flex;
+    flex-direction: column;
+    max-width: 500px;
     margin: 0 auto;
+    gap: 20px;
 }
 .place-event-card {
     break-inside: avoid;
@@ -322,7 +323,7 @@ nav ul a.active::after { content: ''; position: absolute; bottom: -4px; left: 0;
     .letter-envelope-front::before { border-left-width: 130px; border-right-width: 130px; border-bottom-width: 90px; }
     .letter-envelope-front::after { bottom: 90px; border-left-width: 130px; border-right-width: 130px; border-bottom-width: 90px; }
     .letter-envelope-to { font-size: 18px; }
-    .places-grid-cards { columns: 1; }
+    .places-grid-cards { max-width: 100%; }
     .place-event-img-wrap { height: auto; }
 }
 
