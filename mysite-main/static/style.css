@@ -341,3 +341,51 @@ nav ul a.active::after { content: ''; position: absolute; bottom: -4px; left: 0;
     .fullscreen { min-height: -webkit-fill-available; }
     .slide { -webkit-background-size: cover; }
 }
+.music-tracks {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 500px;
+    margin: 0 auto;
+}
+.track-card {
+    background: rgba(255, 107, 138, 0.05);
+    border: 1px solid #3d0020;
+    border-radius: 16px;
+    overflow: hidden;
+    transition: all 0.3s;
+}
+.track-card:hover {
+    border-color: #ff6b8a;
+    box-shadow: 0 10px 30px rgba(255, 107, 138, 0.15);
+}
+.track-info {
+    padding: 20px;
+}
+.track-artist {
+    color: #ff6b8a;
+    font-size: 12px;
+    letter-spacing: 2px;
+    text-transform: uppercase;
+    margin-bottom: 6px;
+}
+.track-name {
+    font-family: 'Playfair Display', serif;
+    font-size: 18px;
+    color: #fff;
+    margin-bottom: 15px;
+}
+.track-link {
+    display: inline-block;
+    color: #ff6b8a;
+    border: 1px solid #ff6b8a;
+    padding: 8px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 13px;
+    transition: 0.3s;
+}
+.track-link:hover {
+    background: #ff6b8a;
+    color: #0a0005;
+}
