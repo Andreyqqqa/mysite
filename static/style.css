@@ -389,3 +389,58 @@ nav ul a.active::after { content: ''; position: absolute; bottom: -4px; left: 0;
     background: #ff6b8a;
     color: #0a0005;
 }
+/* Lightbox arrows */
+.lightbox-arrow {
+    position: fixed;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(20, 10, 15, 0.6);
+    border: 1px solid rgba(255, 107, 138, 0.4);
+    color: #ff6b8a;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    font-size: 22px;
+    cursor: pointer;
+    z-index: 1010;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+    box-shadow: 0 0 20px rgba(255, 107, 138, 0.2);
+}
+.lightbox-arrow:hover {
+    background: rgba(255, 107, 138, 0.2);
+    border-color: #ff6b8a;
+    box-shadow: 0 0 30px rgba(255, 107, 138, 0.5);
+    transform: translateY(-50%) scale(1.1);
+}
+.lightbox-prev { left: 24px; }
+.lightbox-next { right: 24px; }
+
+.lightbox-close {
+    position: fixed;
+    top: 20px;
+    right: 24px;
+    background: rgba(20, 10, 15, 0.6);
+    border: 1px solid rgba(255, 107, 138, 0.4);
+    color: #ff6b8a;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    font-size: 18px;
+    cursor: pointer;
+    z-index: 1010;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+    backdrop-filter: blur(8px);
+}
+.lightbox-close:hover {
+    background: rgba(255, 107, 138, 0.2);
+    border-color: #ff6b8a;
+    box-shadow: 0 0 20px rgba(255, 107, 138, 0.4);
+    transform: scale(1.1);
+}
